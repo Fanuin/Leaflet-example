@@ -1,23 +1,21 @@
 ---
 title: "Leaflet example"
-author: "Fanuin"
-date: "8 11 2020"
+#author: "Fanuin"
+date: "9th November 2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, include=TRUE)
 ```
   
-```r
-install.packages("leaflet")
+```{r}
+library("leaflet")
 ```
 
-## Adding Many Markers
-
-```{r, eval=FALSE}
+```{r}
 set.seed(2016-04-25)
-df <- data.frame(lat=c(52.518611,51.517862), lng= c(13.408333,7.085711),
+df <- data.frame(latitude=c(52.518611,51.517862), longitude= c(13.408333,7.085711),
                   popup=c("Berlin", "Ruhr area"))
 df %>% 
   leaflet() %>%
@@ -25,6 +23,6 @@ df %>%
   addMarkers()
 ```
 
-```{r , eval=FALSE}
+```{r, , include=FALSE}
 cat(paste("Date:", Sys.Date()))
 ```
